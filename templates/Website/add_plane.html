@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login Form</title>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+  </head>
+
+    <body class="home">
+      <header class="header">
+        <a href="#" class="logo">Airline DBMS</a>
+        <nav class="navbar">
+            <a href="add_employee.html">Add Employee</a>
+            <a href="search_employee.html">Search Employee</a>
+            <a href="schedule_flight.html">Flight Scheduler</a>
+            <a href="create_department.html">Create Department</a>
+            <a href="add_plane.html">Add Plane</a>
+            <a href="advanced.html">Advanced</a>
+        </nav>
+      </header>
+  <div class="add-form">
+    <div class="dep-title">Add Plane</div>
+      <form method="post" action="{{ url_for('add_plane') }}">
+        <div class="input-box">
+          <label for="idPlane" >Plane ID:</label>
+          <input type="text" name="idPlane" required><br>
+        </div>
+
+        <div class="input-box">
+          <label for="capacity">Capacity:</label>
+          <input type="number" name="capacity" required><br>
+        </div>
+
+        <div class="input-box">
+          <label for="crewID">Crew ID:</label>
+          <input type="number" name="crewID" required><br>
+        </div>
+
+        <div class="input-box">
+          <label for="planeType">Plane Type:</label>
+          <select name="planeType" required>
+              <option value="Private">Private</option>
+              <option value="Commercial">Commercial</option>
+              <option value="Jumbo">Jumbo</option>
+              <option value="Cargo">Cargo</option>
+          </select><br>
+        </div>
+
+        <div class = "input-box">
+          <input type="submit" value="Add Plane">
+        </div>
+    </form>
+  </div>
+
+  </body>
+</html>

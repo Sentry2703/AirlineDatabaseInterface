@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login Form</title>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-box">
+        <h1>Login</h1>
+        <form class="login-form" onsubmit="redirectToPage()">
+          <div class="form-content">
+            <label for="First Name">First Name:</label>
+            <input type="text" id="first" name="first" required />
+          </div>
+
+          <div class="form-content">
+            <label for="Last Name">Last Name:</label>
+            <input type="text" id="last" name="last" required />
+          </div>
+
+          <div class="form-content">
+            <label for="empID">EmpID:</label>
+            <input type="empID" id="empID" name="empID" required />
+          </div>
+
+          <div class="form-content">
+            <button type="submit">Enter</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

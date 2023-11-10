@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login Form</title>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+  </head>
+
+    <body class="home">
+      <header class="header">
+        <a href="#" class="logo">Airline DBMS</a>
+        <nav class="navbar">
+            <a href="add_employee.html">Add Employee</a>
+            <a href="search_employee.html">Search Employee</a>
+            <a href="schedule_flight.html">Flight Scheduler</a>
+            <a href="create_department.html">Create Department</a>
+            <a href="add_plane.html">Add Plane</a>
+            <a href="advanced.html">Advanced</a>
+        </nav>
+      </header>
+  <div class="add-form">
+
+    <h1 class="search-title">Employee Directory</h1>
+
+  <form class="search-form" >
+    <label for="search">Search for user:</label>
+    <input id="search" type="text" name="usersearch" placeholder="Enter Employee ID...">
+    <button>Search</button>
+  </form>
+  </div>
+
+  </table>
+
+  </body>
+</html>
