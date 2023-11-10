@@ -1,0 +1,11 @@
+| idDepartment | positionName   | classification | primaryLocation  |
+| 1            | Pilot           | Air Crew        | Control Tower    |
+| 2            | Flight Attendant| Air Crew        | Cabin Crew Room  |
+| 3            | Engineer        | Air Crew        | Maintenance Hangar|
+| 4            | Cleaner         | Janitorial      | Terminal 1       |
+| 5            | Custodian       | Janitorial      | Terminal 2       |
+| 6            | Cashier         | Concessions     | Food Court        |
+| 7            | Ticket Agent    | Concessions     | Ticket Counter   |
+| 8            | Manager         | Management      | Office Building  |
+| 9            | Supervisor      | Management      | Operations Center|
+| 10            | Security Guard  | Management      | Security Office  |

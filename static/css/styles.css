@@ -1,0 +1,238 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+h1 {
+  padding-bottom: 5px;
+  color: rgba(0, 0, 50, 0.8);
+}
+.container {
+  height: 100vh;
+  width: 100%;
+  background-image:
+    url(../images/airline-travel-background-vector-44892802.jpg);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  image-rendering: optimizeQuality;
+}
+
+.form-box {
+  position: absolute;
+  width: 50%;
+  max-width: 450px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  text-align: center;
+  padding: 50px 60px 70px;
+  margin-left: 0%;
+
+}
+
+.form-content {
+  padding-bottom: 10px;
+  color: rgba(0, 0, 50, 0.8);
+}
+
+button {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  background: linear-gradient(rgba(0, 0, 50, 0.8), rgba(0, 0, 50, 0.8));
+}
+
+.navbar a {
+  position: relative;
+  font-size: 18px;
+  color: white;
+  font-weight: 50;
+  text-decoration: none;
+  margin-left: 40px;
+}
+
+.navbar a::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  width: 0;
+  left: 0;
+  height: 2px;
+  background: white;
+  transition: 0.3s;
+}
+
+.navbar a:hover:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  left: 0;
+  height: 2px;
+  background: white;
+}
+
+.logo {
+  text-decoration: none;
+  font-size: 32px;
+  color: white;
+  font-weight: 700;
+}
+
+.form {
+  position: absolute;
+  width: 50%;
+  max-width: 450px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 50px 60px 70px;
+  margin-left: 0%;
+}
+
+.add-form {
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  position: absolute;
+  width: 50%;
+  max-width: 450px;
+  max-height: 'max-content';
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+  padding: 50px 60px 70px;
+  margin-left: 0%;
+  background: linear-gradient(rgba(0, 0, 50, 0.8), rgba(0, 0, 50, 0.8));
+}
+
+.input-box {
+  padding-top: 10px;
+}
+.title, .dep-title {
+  color:white;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.title::before {
+  content: "";
+  position: absolute;
+  top: 18%;
+  width: 40%;
+  left: 50;
+  height: 2px;
+  background: white;
+}
+
+.dep-title::before {
+  content: "";
+  position: absolute;
+  top: 21%;
+  width: 53%;
+  left: 50;
+  height: 2px;
+  background: white;
+}
+
+.input-box{
+  height: 45px;
+  width: 100%;
+  color:white;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.button{
+  text-align: center;
+}
+
+.form-box{
+  border-radius: 10px;
+}
+
+body{
+  background-image: linear-gradient(rgba(0, 0, 50, 0.8), rgba(0, 0, 50, 0.8)), url(../images/TAL-airplane-interior-cabin-aisle-KIDFREE0823-96e2d4b76dfc41c7b754d9dd0eeb5298.webp);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  image-rendering: optimizeQuality;
+}
+
+.search-title{
+  color:white;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.search-form {
+  margin-top: 20px; /* Adjust the margin as needed */
+}
+
+.search-form label {
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  .search-form {
+    margin-top: 20px; /* Adjust the margin as needed */
+  }
+
+  .search-form label {
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 5px;
+  }
+
+
+  .search-form button {
+    height: 45px;
+    width: 100%;
+    color: white;
+    font-weight: 500;
+    background-color: rgba(0, 0, 50, 0.8);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  margin-bottom: 5px;
+}
+
+.search-form input {
+  height: 45px;
+  width: 100%;
+  color: black;
+  font-weight: 500;
+  margin-bottom: 10px;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.search-form button {
+  height: 45px;
+  width: 100%;
+  color: white;
+  font-weight: 500;
+  background-color: rgba(0, 0, 50, 0.8);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
