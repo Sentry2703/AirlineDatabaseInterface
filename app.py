@@ -11,35 +11,35 @@ db = SQLAlchemy(app)
 
 @app.route('/')
 def index():
-    return render_template('Database-Website/add_plane.html')
+    return render_template('Website/add_plane.html')
 
 @app.route('/add_plane.html')
 def addPlane():
-    return render_template('Database-Website/add_plane.html')
+    return render_template('Website/add_plane.html')
 
 @app.route('/add_employee.html')
 def addEmployee():
-    return render_template('Database-Website/add_employee.html')
+    return render_template('Website/add_employee.html')
 
 
 @app.route('/advanced.html')
 def advanced():
-    return render_template('Database-Website/advanced.html')
+    return render_template('Website/advanced.html')
 
 
 @app.route('/create_department.html')
 def create_department():
-    return render_template('Database-Website/create_department.html')
+    return render_template('Website/create_department.html')
 
 
 @app.route('/schedule_flight.html')
 def schedule_flight():
-    return render_template('Database-Website/schedule_flight.html')
+    return render_template('Website/schedule_flight.html')
 
 
 @app.route('/search_employee.html')
 def searchEmployee():
-    return render_template('Database-Website/search_employee.html')
+    return render_template('Website/search_employee.html')
 
 class Plane(db.Model):
     __tablename__ = 'Plane'
