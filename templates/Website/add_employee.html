@@ -18,42 +18,49 @@
             <a href="advanced.html">Advanced</a>
         </nav>
       </header>
-  <div class="add-form">
-    <div class="title">Add Employee</div>
-    <form action="#">
-        <div class="user-details">
-            <div class="input-box">
-                <span class="details">First Name</span>
-                <input type="text" placeholder="Enter First Name">
-            </div>
-            <div class="input-box">
-                <span class="details">Last Name</span>
-                <input type="text" placeholder="Enter Last Name">
-            </div>
-            <div class="input-box">
-                <span class="details">Position ID</span>
-                <input type="text" placeholder="Enter Position ID">
-            </div>
-            <div class="input-box">
-                <span class="details">Employee ID</span>
-                <input type="text" placeholder="Enter EMP ID">
-            </div>
-            <div class="input-box">
-                <span class="details">Salary</span>
-                <input type="text" placeholder="Enter Salary">
-            </div>
-            <div class="input-box">
-              <span class="details">Status</span>
-              <input type="text" placeholder="Enter Status">
+
+    <div class="add-form">
+      <div class="dep-title">Add Employee</div>
+        <form method="post" action="{{ url_for('employee_blueprint.add_employee') }}">
+          <div class="input-box">
+            <label for="idEmployee">Employee ID:</label>
+            <input type="text" placeholder="Enter EMP ID" name ="idEmployee" required>
           </div>
-        </div>
-        <div class="button">
-            <input type="Submit" value="Submit">
-        </div>
-    </form>
-  </div>
 
-  </table>
+          <div class="input-box">
+            <label for="FirstName">First Name</span>
+            <input type="text" placeholder="Enter First Name" name= "FirstName" required>
+        </div>
 
+        <div class="input-box">
+            <label for ="LastName">Last Name</span>
+            <input type="text" placeholder="Enter Last Name" name = "LastName" required>
+        </div>
+
+          <div class="input-box">
+            <label for="positionID">Position ID</span>
+            <input type="text" placeholder="Enter Position ID" name = "positionID" required>
+        </div>
+
+          <div class="input-box">
+            <label for="Salary">Salary:</label>
+            <input type="text" placeholder="Enter Salary" required name = "Salary">
+          </div>
+
+          <div class="input-box">
+            <label for="Status">Employment Status:</label>
+            <select name="Status" required>
+                <option value="Active">Active</option>
+                <option value="Retired">Retired</option>
+                <option value="Vacationing">Vacationing</option>
+                <option value="Fired">Fired</option>
+            </select><br>
+          </div>
+
+          <div class = "input-box">
+            <input type="submit" value="Add Employee">
+          </div>
+      </form>
+    </div>
   </body>
 </html>
