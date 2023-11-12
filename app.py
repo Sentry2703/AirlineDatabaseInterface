@@ -14,14 +14,12 @@ import employee_blueprint
 app.register_blueprint(employee_blueprint.employees_blueprint, name='employee_blueprint')
 import department_blueprint
 app.register_blueprint(department_blueprint.departments_blueprint, name='department_blueprint')
+import flight_blueprint
+app.register_blueprint(flight_blueprint.flights_blueprint, name='flight_blueprint')
 
 @app.route('/advanced.html')
 def advanced():
     return render_template('Website/advanced.html')
-
-@app.route('/schedule_flight.html')
-def schedule_flight():
-    return render_template('Website/schedule_flight.html')
 
 
 @app.route('/search_employee.html')
