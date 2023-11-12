@@ -1,18 +1,10 @@
 from flask import Blueprint, render_template, request, redirect, url_for
 from sqlalchemy.exc import IntegrityError
-from app import db
+
 
 employees_blueprint = Blueprint('employee_blueprint', __name__, template_folder='templates')
 
 
-class Employee(db.Model):
-    __tablename__ = 'Employee'
-    idEmployee = db.Column(db.Integer, primary_key=True, unique=True)
-    firstName = db.Column(db.String(45))
-    lastName = db.Column(db.String(45))
-    positionID = db.Column(db.Integer)
-    salary = db.Column(db.Integer)
-    status = db.Column(db.Enum('Active', 'Retired', 'Vacationing', 'Fired'))
 
 @employees_blueprint.route('/add_employee.html', methods=['GET'])
 def add_employee_form():
@@ -26,6 +18,17 @@ def add_employee():
     positionID = request.form['positionID']
     salary = request.form['Salary']
     status = request.form['Status']
+
+    from app import db
+    
+    class Employee(db.Model):
+        __tablename__ = 'Employee'
+        idEmployee = db.Column(db.Integer, primary_key=True, unique=True)
+        firstName = db.Column(db.String(45))
+        lastName = db.Column(db.String(45))
+        positionID = db.Column(db.Integer)
+        salary = db.Column(db.Integer)
+        status = db.Column(db.Enum('Active', 'Retired', 'Vacationing', 'Fired'))
 
     new_employee = Employee(idEmployee=idEmployee, firstName=firstName, lastName=lastName, positionID=positionID, salary=salary, status=status)
 
