@@ -1,7 +1,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Login Form</title>
+    <title>Department Creation</title>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
   </head>
@@ -18,25 +18,34 @@
             <a href="advanced.html">Advanced</a>
         </nav>
       </header>
+
   <div class="add-form">
     <div class="dep-title">Create Department</div>
-    <form action="#">
+    <form method="post" action="{{ url_for('department_blueprint.add_department') }}">
         <div class="user-details">
             <div class="input-box">
                 <span class="details">Department ID</span>
-                <input type="text" placeholder="Enter Department ID">
+                <input type="number" name = "idDepartment" placeholder="Enter Department ID" required>
             </div>
+
             <div class="input-box">
                 <span class="details">Position Name</span>
-                <input type="text" placeholder="Enter Position Name">
+                <input type="text" placeholder="Enter Position Name" required name = "positionName">
             </div>
+
             <div class="input-box">
-                <span class="details">Classification</span>
-                <input type="text" placeholder="Enter Classification">
+              <label for="planeType">Classification</label>
+              <select name="classification" required>
+                  <option value="Air Crew">Air Crew</option>
+                  <option value="Janitorial">Janitorial</option>
+                  <option value="Concessions">Concessions</option>
+                  <option value="Management">Management</option>
+              </select><br>
             </div>
+
             <div class="input-box">
                 <span class="details">Primary Location</span>
-                <input type="text" placeholder="Enter Primary Location">
+                <input type="text" name = "primaryLocation" placeholder="Enter Primary Location" required>
             </div>
         </div>
         <div class="button">
