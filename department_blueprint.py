@@ -1,7 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for
 from sqlalchemy.exc import IntegrityError
 
-
 departments_blueprint = Blueprint('departments_blueprint', __name__, template_folder='templates')
 
 from app import db
@@ -47,3 +46,24 @@ def add_department():
         return render_template('Website/error.html', error_info=e)
     finally:
         pass
+
+#update department
+@departments_blueprint.route('/update_department.html', methods=['POST'])
+def update_department():
+    idDepartment = request.form['newIdDepartment']
+
+    try:
+        department = Department.query.filter(Department.idDepartment==idDepartment).first()
+        if 'newPositionName' in request.form and request.form['newPositionName'] != "":
+            department.positionName = request.form['newPositionName']
+        if 'newClassification' in request.form and request.form['newClassification'] != "":
+            department.classification = request.form['newClassification']
+        if 'newPrimaryLocation' in request.form and request.form['newPrimaryLocation'] != "":
+            department.primaryLocation = request.form['newPrimaryLocation']
+
+        db.session.commit()
+        return render_template('Website/create_department.html')
+    except Exception as e:
+        error_info = "An error occurred while processing your request."
+        return render_template('Website/error.html', error_info=e)
+    

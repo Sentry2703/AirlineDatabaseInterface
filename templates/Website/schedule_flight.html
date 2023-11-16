@@ -1,7 +1,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Login Form</title>
+    <title>Flight Schedule</title>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
   </head>
@@ -56,31 +56,31 @@
 
   <div class="add-form">
     <div class="title">Update Flight</div>
-    <form method="post" action="{{ url_for('flight_blueprint.schedule_flight') }}">
+    <form method="post" action="{{ url_for('flight_blueprint.update_flight') }}">
         <div class="user-details">
             <div class="input-box">
-                <span class="details">New Flight Number</span>
+                <span class="details">Flight Number</span>
                 <input type="text" name = "idFlight" placeholder="Enter Flight Number" required>
             </div>
             <div class="input-box">
                 <span class="details">New Destination</span>
-                <input type="text" name = "destination" placeholder="Enter Destination" required>
+                <input type="text" name = "newDestination" placeholder="Enter Destination" required>
             </div>
             <div class="input-box">
                 <span class="details">New Plane ID</span>
-                <input type="text" name = "planeID" placeholder="Enter Plane ID" required>
+                <input type="text" name = "newPlaneID" placeholder="Enter Plane ID" required>
             </div>
             <div class="input-box">
                 <span class="details">New Departure Date</span>
-                <input type="date" name = "departureDate" placeholder="Enter Departure Date" required>
+                <input type="date" name = "newDepartureDate" placeholder="Enter Departure Date" required>
             </div>
             <div class="input-box">
                 <span class="details">New Departure Time</span>
-                <input type="time" name = "departureTime" placeholder="Enter Departure Time" required>
+                <input type="time" name = "newDepartureTime" placeholder="Enter Departure Time" required>
             </div>
             <div class="input-box">
                 <span class="details">New Flight Duration</span>
-                <input type="number" name = "FlightTime"placeholder="Flight Duration in minutes" required>
+                <input type="number" name = "newFlightTime"placeholder="Flight Duration in minutes" required>
             </div>
         </div>
         <div class="button">
@@ -90,8 +90,8 @@
   </div>
 
   <div class="add-form">
-    <div class="title">Delete Schedule Flight</div>
-    <form method="post" action="{{ url_for('flight_blueprint.schedule_flight') }}">
+    <div class="title">Delete Scheduled Flight</div>
+    <form method="post" action="{{ url_for('flight_blueprint.delete_flight') }}">
         <div class="user-details">
             <div class="input-box">
                 <span class="details">Flight Number</span>

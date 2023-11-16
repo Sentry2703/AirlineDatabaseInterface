@@ -25,7 +25,7 @@
         <form method="post" action="{{ url_for('employee_blueprint.add_employee') }}">
           <div class="input-box">
             <label for="idEmployee">Employee ID:</label>
-            <input type="text" placeholder="Enter EMP ID" name ="idEmployee" required>
+            <input type="number" placeholder="Enter EMP ID" name ="idEmployee" required>
           </div>
 
           <div class="input-box">
@@ -65,36 +65,37 @@
     </div>
 
     <div class="update-form">
-      <div class="dep-title"> Update Employee</div>
-        <form method="post" action="{{ url_for('employee_blueprint.add_employee') }}">
+      <div class="search-title"> Update Employee</div>
+        <form method="post" action="{{ url_for('employee_blueprint.update_employee') }}">
           <div class="input-box">
             <label for="idEmployee">Employee ID:</label>
-            <input type="text" placeholder="Enter EMP ID" name ="idEmployee" required>
+            <input type="number" placeholder="Enter EMP ID" name ="idEmployee" required>
           </div>
 
           <div class="input-box">
             <label for="FirstName">New First Name</span>
-            <input type="text" placeholder="Enter New First Name" name= "New-FirstName" required>
+            <input type="text" placeholder="Enter New First Name" name= "New-FirstName">
         </div>
 
         <div class="input-box">
             <label for ="LastName">New Last Name</span>
-            <input type="text" placeholder="Enter New Last Name" name = "New-LastName" required>
+            <input type="text" placeholder="Enter New Last Name" name = "New-LastName">
         </div>
 
           <div class="input-box">
             <label for="positionID">New Position ID</span>
-            <input type="text" placeholder="Enter New Position ID" name = "New-positionID" required>
+            <input type="text" placeholder="Enter New Position ID" name = "New-positionID">
         </div>
 
           <div class="input-box">
             <label for="Salary">New Salary:</label>
-            <input type="text" placeholder="Enter New Salary" required name = "New-Salary">
+            <input type="text" placeholder="Enter New Salary" name = "New-Salary">
           </div>
 
           <div class="input-box">
             <label for="Status">New Employment Status:</label>
-            <select name="Status" required>
+            <select name="Status">
+                <option value=""></option>
                 <option value="Active">Active</option>
                 <option value="Retired">Retired</option>
                 <option value="Vacationing">Vacationing</option>
@@ -109,11 +110,11 @@
     </div>
 
     <div class="delete-form">
-      <div class="dep-title"> Delete Employee</div>
-        <form method="post" action="{{ url_for('employee_blueprint.add_employee') }}">
+      <div class="search-title"> Delete Employee</div>
+        <form method="post" action="{{ url_for('employee_blueprint.delete_employee') }}">
           <div class="input-box">
             <label for="idEmployee">Employee ID:</label>
-            <input type="text" placeholder="Enter EMP ID" name ="idEmployee" required>
+            <input type="number" placeholder="Enter EMP ID" name ="idEmployee" required>
           </div>
 
           <div class = "input-box">
@@ -122,13 +123,5 @@
       </form>
     </div>
   </div>
-
-
-
-    
-
-    
-    
-    
   </body>
 </html>

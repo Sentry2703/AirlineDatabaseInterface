@@ -1,7 +1,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Login Form</title>
+    <title>Employee Search</title>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
   </head>
@@ -20,19 +20,37 @@
       </header>
 
 
-<div class="all-forms">
-  <div class="add-form">
-  
-    <h1 class="search-title">Employee Directory</h1>
+    <div class="all-forms">
+      <div class="add-form">
+        <h1 class="search-title">Employee Directory</h1>
 
-  <form class="search-form" >
-    <label for="search">Search for user:</label>
-    <input id="search" type="text" name="usersearch" placeholder="Enter Employee ID...">
-    <button>Search</button>
-  </form>
-  </div>
+        <form class="search-form" action = "{{ url_for('employee_blueprint.search_employee') }}" method = "post">
+          <label for="search">Search for user:</label>
+          <input id="search" type="text" name="employeeID" placeholder="Enter Employee ID...">
 
-  </table>
+          <div class="button">
+                <input type="submit" value="Submit">
+          </div>
+        </form>
 
+        <div id="viewing-window">
+          <h2>Employee</h2>
+          <ul>
+              {% if employee %}
+                <li class = "flight">
+                    Employee ID: {{ employee.idEmployee }}<br>
+                    First Name: {{ employee.firstName }}<br>
+                    Last Name: {{ employee.lastName }}<br>
+                    Position: {{ employee.positionID }}<br>
+                    Salary: {{ employee.salary }}<br>
+                    Employment Status: {{ employee.status }}<br>
+                </li>
+              {% else %}
+                  <p>No employee found</p>
+              {% endif %}
+          </ul>
+      </div>
+      </div>
+    </div>
   </body>
 </html>

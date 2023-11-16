@@ -51,3 +51,24 @@ def add_plane():
         return render_template('Website/error.html', error_info=e)
     finally:
         pass
+
+#update plane
+@planes_blueprint.route('/update_plane.html', methods=['POST'])
+def update_plane():
+    planeID = request.form['planeID']
+
+    try:
+        plane = Plane.query.filter(Plane.planeID == planeID).first()
+        if 'newCapacity' in request.form and 'newCapacity' != "":
+            plane.capacity = request.form['newCapacity']
+        if 'newCrewID' in request.form and 'newCrewID' != "":
+            plane.crewID = request.form['newCrewID']
+        if 'newPlaneType' in request.form and 'newPlaneType' != "":
+            plane.status = request.form['newPlaneType']
+
+        db.session.commit()
+        plane = Plane.query.filter(Plane.planeID == planeID).first()
+        return render_template('/Website/add_plane.html')
+    except Exception as e:
+        error_info = "An error occurred while processing your request."
+        return render_template('Website/error.html', error_info=e)

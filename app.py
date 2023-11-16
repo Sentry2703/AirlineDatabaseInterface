@@ -18,11 +18,6 @@ app.register_blueprint(flight_blueprint.flights_blueprint, name='flight_blueprin
 import advanced_blueprint
 app.register_blueprint(advanced_blueprint.advanced_blueprint, name='advanced_blueprint')
 
-
-@app.route('/search_employee.html')
-def searchEmployee():
-    return render_template('Website/search_employee.html')
-
 if __name__ == "__main__":
     with app.app_context():
         db.create_all()

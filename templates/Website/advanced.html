@@ -21,14 +21,14 @@
     
         <div class = "all-forms">
         <div class="add-form">
-            <h1 class="search-title">Airport Query</h1>
+            <h1 class="search-title">Flight Query</h1>
             <form action="{{ url_for('advanced_blueprint.advanced_flight') }}" method="post">
                 <div class="input-box">
                     <div class="inRow">
-                        <input type="date" name="start_date" id="start_date" placeholder="Enter Start Date">
+                        <input type="date" name="start_date" id="start_date" placeholder="Enter Start Date" required> 
                     </div>
                     <div class="inRow">
-                        <input type="date" name="end_date" id="end_date" placeholder="Enter End Date">
+                        <input type="date" name="end_date" id="end_date" placeholder="Enter End Date" required>
                     </div>
                 </div>
                 <div class="button">
@@ -46,7 +46,7 @@
                                 Destination: {{ flight.destination }}<br>
                                 Departure Date: {{ flight.departureDate }}<br>
                                 Departure Time: {{ flight.departureTime }}<br>
-                                Flight Time: {{ flight.flightTime }} hours<br>
+                                Flight Time: {{ flight.flightTime }} minutes<br>
                             </li>
                         {% endfor %}
                     {% else %}

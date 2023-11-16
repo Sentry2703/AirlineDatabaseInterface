@@ -18,6 +18,7 @@ class Flight(db.Model):
 def schedule_flight_form():
     return render_template('/Website/schedule_flight.html')
 
+#add flight
 @flights_blueprint.route('/schedule_flight.html', methods=['POST'])
 def schedule_flight():
     idFlight = request.form['idFlight']
@@ -45,3 +46,40 @@ def schedule_flight():
         return render_template('Website/error.html', error_info=e)
     finally:
         pass
+
+#update flight
+@flights_blueprint.route('/update_flight.html', methods=['POST'])
+def update_flight():
+    idFlight = request.form['idFlight']
+
+    try:
+        flight = Flight.query.filter(Flight.idFlight==idFlight).first()
+        if 'newDestination' in request.form and request.form['newDestination'] != "":
+            flight.destination = request.form['newDestination']
+        if 'newPlaneID' in request.form and request.form['newPlaneID'] != "":
+            flight.planeID = request.form['newPlaneID']
+        if 'newDepartureDate' in request.form and request.form['newDepartureDate'] != "":
+            flight.departureDate = request.form['newDepartureDate']
+        if 'newDepartureTime' in request.form and request.form['newDepartureTime'] != "":
+            flight.departureTime = request.form['newDepartureTime']
+        if 'newFlightTime' in request.form and request.form['newFlightTime'] != "":
+            flight.flightTime = request.form['newFlightTime']
+
+        db.session.commit()
+        return render_template('/Website/schedule_flight.html')
+    except Exception as e:
+        error_info = "An error occurred while processing your request."
+        return render_template('Website/error.html', error_info=e)
+
+#delete flight
+@flights_blueprint.route('/delete_flight.html', methods=['POST'])
+def delete_flight():
+    idFlight = request.form['idFlight']
+    try:
+        flight = Flight.query.filter(Flight.idFlight==idFlight).first()
+        db.session.delete(flight)
+        db.session.commit()
+        return render_template('/Website/schedule_flight.html')
+    except Exception as e:
+        error_info = "An error occurred while processing your request."
+        return render_template('Website/error.html', error_info=e)
