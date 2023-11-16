@@ -13,17 +13,6 @@ class Employee(db.Model):
     salary = db.Column(db.Integer)
     status = db.Column(db.Enum('Active', 'Retired', 'Vacationing', 'Fired'))
 
-from app import db
-    
-class Employee(db.Model):
-    __tablename__ = 'Employee'
-    idEmployee = db.Column(db.Integer, primary_key=True, unique=True)
-    firstName = db.Column(db.String(45))
-    lastName = db.Column(db.String(45))
-    positionID = db.Column(db.Integer)
-    salary = db.Column(db.Integer)
-    status = db.Column(db.Enum('Active', 'Retired', 'Vacationing', 'Fired'))
-
 @employees_blueprint.route('/add_employee.html', methods=['GET'])
 def add_employee_form():
     return render_template('/Website/add_employee.html')
