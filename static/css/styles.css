@@ -20,19 +20,6 @@ h1 {
   image-rendering: optimizeQuality;
 }
 
-.form-box {
-  position: absolute;
-  width: 50%;
-  max-width: 450px;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  text-align: center;
-  padding: 50px 60px 70px;
-  margin-left: 0%;
-
-}
 
 .form-content {
   padding-bottom: 10px;
@@ -89,6 +76,31 @@ button {
   background: white;
 }
 
+.flight{
+  margin-bottom: 25px;
+}
+
+.inRow {
+  display: inline;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#viewing-window {
+  width: auto; /* 100% of viewport width */
+  height: auto; /* 100% of viewport height */
+  background-color: #fff; /* Set background color */
+  bottom: 0%;
+  display: block;
+  align-items: center;
+  justify-content: center;
+}
+
+#content {
+  max-width: 80%; /* Limit content width for better readability */
+}
+
 .logo {
   text-decoration: none;
   font-size: 32px;
@@ -111,9 +123,10 @@ button {
 /* .add-form {
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-  width: 50%;
-  max-width: 450px;
-  max-height: 'max-content';
+  position: absolute;
+  width: 70%;
+  max-width: 600px;
+  max-height: 1000px;
   left: 50%;
   top: 55%;
   padding: 50px 60px 70px;
@@ -124,13 +137,14 @@ button {
 .input-box {
   padding-top: 10px;
 }
-.title, .dep-title {
+
+.title {
   color:white;
   font-size: 25px;
   font-weight: 500;
 }
 
-/* .title::before {
+.title::before {
   content: "";
   position: absolute;
   top: 18%;
@@ -138,17 +152,17 @@ button {
   left: 50;
   height: 2px;
   background: white;
-} */
+}
 
-/* .dep-title::before {
+.dep-title::before {
   content: "";
   position: absolute;
   top: 21%;
   width: 53%;
-  left: 50%;
+  left: 50;
   height: 2px;
   background: white;
-} */
+}
 
 .input-box{
   height: 45px;
