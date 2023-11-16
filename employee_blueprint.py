@@ -1,7 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for
 from sqlalchemy.exc import IntegrityError
 
-
 employees_blueprint = Blueprint('employee_blueprint', __name__, template_folder='templates')
 
 from app import db
