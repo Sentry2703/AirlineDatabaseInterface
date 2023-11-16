@@ -20,31 +20,31 @@
       </header>
   <div class="add-form">
     <div class="title">Schedule Flight</div>
-    <form action="#">
+    <form method="post" action="{{ url_for('flight_blueprint.schedule_flight') }}">
         <div class="user-details">
             <div class="input-box">
                 <span class="details">Flight Number</span>
-                <input type="text" placeholder="Enter Flight Number">
+                <input type="text" name = "idFlight" placeholder="Enter Flight Number" required>
             </div>
             <div class="input-box">
                 <span class="details">Destination</span>
-                <input type="text" placeholder="Enter Destination">
+                <input type="text" name = "destination" placeholder="Enter Destination" required>
             </div>
             <div class="input-box">
                 <span class="details">Plane ID</span>
-                <input type="text" placeholder="Enter Plane ID">
+                <input type="text" name = "planeID" placeholder="Enter Plane ID" required>
             </div>
             <div class="input-box">
                 <span class="details">Departure Date</span>
-                <input type="text" placeholder="Enter Departure Date">
+                <input type="date" name = "departureDate" placeholder="Enter Departure Date" required>
             </div>
             <div class="input-box">
                 <span class="details">Departure Time</span>
-                <input type="text" placeholder="Enter Departure Time">
+                <input type="time" name = "departureTime" placeholder="Enter Departure Time" required>
             </div>
             <div class="input-box">
                 <span class="details">Flight Duration</span>
-                <input type="text" placeholder="Enter Flight Duration">
+                <input type="number" name = "FlightTime"placeholder="Flight Duration in minutes" required>
             </div>
         </div>
         <div class="button">
