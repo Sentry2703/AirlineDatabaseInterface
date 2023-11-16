@@ -20,7 +20,7 @@
       </header>
 
     <div class="add-form">
-      <div class="dep-title">Add Employee</div>
+      <div class="search-title">Add Employee</div>
         <form method="post" action="{{ url_for('employee_blueprint.add_employee') }}">
           <div class="input-box">
             <label for="idEmployee">Employee ID:</label>
@@ -30,17 +30,17 @@
           <div class="input-box">
             <label for="FirstName">First Name</span>
             <input type="text" placeholder="Enter First Name" name= "FirstName" required>
-        </div>
+          </div>
 
-        <div class="input-box">
+          <div class="input-box">
             <label for ="LastName">Last Name</span>
             <input type="text" placeholder="Enter Last Name" name = "LastName" required>
-        </div>
+          </div>
 
           <div class="input-box">
             <label for="positionID">Position ID</span>
             <input type="text" placeholder="Enter Position ID" name = "positionID" required>
-        </div>
+          </div>
 
           <div class="input-box">
             <label for="Salary">Salary:</label>
