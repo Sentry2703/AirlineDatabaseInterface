@@ -3,6 +3,15 @@ from sqlalchemy.exc import IntegrityError
 
 
 departments_blueprint = Blueprint('departments_blueprint', __name__, template_folder='templates')
+
+from app import db
+    
+class Department(db.Model):
+    __tablename__ = 'Department'
+    idDepartment = db.Column(db.Integer, primary_key=True, unique=True)
+    positionName = db.Column(db.String(45))
+    classification = db.Column(db.Enum(('Air Crew','Janitorial','Concessions','Management')))
+    primaryLocation = db.Column(db.String(45)) 
     
 @departments_blueprint.route('/create_department.html')
 def create_department():
@@ -14,15 +23,6 @@ def add_department():
     positionName = request.form['positionName']
     classification = request.form['classification']
     primaryLocation = request.form['primaryLocation']
-
-    from app import db
-    
-    class Department(db.Model):
-        __tablename__ = 'Department'
-        idDepartment = db.Column(db.Integer, primary_key=True, unique=True)
-        positionName = db.Column(db.String(45))
-        classification = db.Column(db.Enum(('Air Crew','Janitorial','Concessions','Management')))
-        primaryLocation = db.Column(db.String(45)) 
 
     new_department = Department(idDepartment=idDepartment, positionName=positionName, classification=classification, primaryLocation=primaryLocation)
 

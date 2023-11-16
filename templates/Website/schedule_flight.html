@@ -18,6 +18,7 @@
             <a href="advanced.html">Advanced</a>
         </nav>
       </header>
+<div class="all-forms">
   <div class="add-form">
     <div class="title">Schedule Flight</div>
     <form method="post" action="{{ url_for('flight_blueprint.schedule_flight') }}">
@@ -52,6 +53,58 @@
         </div>
     </form>
   </div>
+
+  <div class="add-form">
+    <div class="title">Update Flight</div>
+    <form method="post" action="{{ url_for('flight_blueprint.schedule_flight') }}">
+        <div class="user-details">
+            <div class="input-box">
+                <span class="details">New Flight Number</span>
+                <input type="text" name = "idFlight" placeholder="Enter Flight Number" required>
+            </div>
+            <div class="input-box">
+                <span class="details">New Destination</span>
+                <input type="text" name = "destination" placeholder="Enter Destination" required>
+            </div>
+            <div class="input-box">
+                <span class="details">New Plane ID</span>
+                <input type="text" name = "planeID" placeholder="Enter Plane ID" required>
+            </div>
+            <div class="input-box">
+                <span class="details">New Departure Date</span>
+                <input type="date" name = "departureDate" placeholder="Enter Departure Date" required>
+            </div>
+            <div class="input-box">
+                <span class="details">New Departure Time</span>
+                <input type="time" name = "departureTime" placeholder="Enter Departure Time" required>
+            </div>
+            <div class="input-box">
+                <span class="details">New Flight Duration</span>
+                <input type="number" name = "FlightTime"placeholder="Flight Duration in minutes" required>
+            </div>
+        </div>
+        <div class="button">
+            <input type="Submit" value="Update">
+        </div>
+    </form>
+  </div>
+
+  <div class="add-form">
+    <div class="title">Delete Schedule Flight</div>
+    <form method="post" action="{{ url_for('flight_blueprint.schedule_flight') }}">
+        <div class="user-details">
+            <div class="input-box">
+                <span class="details">Flight Number</span>
+                <input type="text" name = "idFlight" placeholder="Enter Flight Number" required>
+            </div>
+            
+        <div class="button">
+            <input type="Submit" value="Delete">
+        </div>
+    </form>
+  </div>
+
+</div>
 
   </table>
 

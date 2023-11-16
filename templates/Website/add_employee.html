@@ -10,7 +10,7 @@
       <header class="header">
         <a href="#" class="logo">Airline DBMS</a>
         <nav class="navbar">
-            <a href="add_employee.html">Add Employee</a>
+            <a href="add_employee.html"> Employee</a>
             <a href="search_employee.html">Search Employee</a>
             <a href="schedule_flight.html">Flight Scheduler</a>
             <a href="create_department.html">Create Department</a>
@@ -18,9 +18,9 @@
             <a href="advanced.html">Advanced</a>
         </nav>
       </header>
-
+<div class="all-forms">
     <div class="add-form">
-      <div class="dep-title">Add Employee</div>
+      <div class="dep-title"> Add Employee</div>
         <form method="post" action="{{ url_for('employee_blueprint.add_employee') }}">
           <div class="input-box">
             <label for="idEmployee">Employee ID:</label>
@@ -62,5 +62,72 @@
           </div>
       </form>
     </div>
+
+    <div class="update-form">
+      <div class="dep-title"> Update Employee</div>
+        <form method="post" action="{{ url_for('employee_blueprint.add_employee') }}">
+          <div class="input-box">
+            <label for="idEmployee">Employee ID:</label>
+            <input type="text" placeholder="Enter EMP ID" name ="idEmployee" required>
+          </div>
+
+          <div class="input-box">
+            <label for="FirstName">New First Name</span>
+            <input type="text" placeholder="Enter New First Name" name= "New-FirstName" required>
+        </div>
+
+        <div class="input-box">
+            <label for ="LastName">New Last Name</span>
+            <input type="text" placeholder="Enter New Last Name" name = "New-LastName" required>
+        </div>
+
+          <div class="input-box">
+            <label for="positionID">New Position ID</span>
+            <input type="text" placeholder="Enter New Position ID" name = "New-positionID" required>
+        </div>
+
+          <div class="input-box">
+            <label for="Salary">New Salary:</label>
+            <input type="text" placeholder="Enter New Salary" required name = "New-Salary">
+          </div>
+
+          <div class="input-box">
+            <label for="Status">New Employment Status:</label>
+            <select name="Status" required>
+                <option value="Active">Active</option>
+                <option value="Retired">Retired</option>
+                <option value="Vacationing">Vacationing</option>
+                <option value="Fired">Fired</option>
+            </select><br>
+          </div>
+
+          <div class = "input-box">
+            <input type="submit" value="Update Employee">
+          </div>
+      </form>
+    </div>
+
+    <div class="delete-form">
+      <div class="dep-title"> Delete Employee</div>
+        <form method="post" action="{{ url_for('employee_blueprint.add_employee') }}">
+          <div class="input-box">
+            <label for="idEmployee">Employee ID:</label>
+            <input type="text" placeholder="Enter EMP ID" name ="idEmployee" required>
+          </div>
+
+          <div class = "input-box">
+            <input type="submit" value="Delete">
+          </div>
+      </form>
+    </div>
+  </div>
+
+
+
+    
+
+    
+    
+    
   </body>
 </html>

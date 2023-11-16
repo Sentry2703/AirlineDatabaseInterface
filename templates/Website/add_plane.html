@@ -18,22 +18,24 @@
             <a href="advanced.html">Advanced</a>
         </nav>
       </header>
+
+<div class="all-forms">
   <div class="add-form">
     <div class="dep-title">Add Plane</div>
       <form method="post" action="{{ url_for('plane_blueprint.add_plane') }}">
         <div class="input-box">
           <label for="idPlane" >Plane ID:</label>
-          <input type="text" name="idPlane" required><br>
+          <input type="text" name="idPlane" placeholder="Enter Plane ID" required><br>
         </div>
 
         <div class="input-box">
           <label for="capacity">Capacity:</label>
-          <input type="number" name="capacity" required><br>
+          <input type="number" name="capacity" placeholder="Enter Plane Capacity" required><br>
         </div>
 
         <div class="input-box">
           <label for="crewID">Crew ID:</label>
-          <input type="number" name="crewID" required><br>
+          <input type="number" name="crewID" placeholder="Enter Crew ID" required><br>
         </div>
 
         <div class="input-box">
@@ -51,6 +53,56 @@
         </div>
     </form>
   </div>
+
+  <div class="add-form">
+    <div class="dep-title">Update Add Plane</div>
+      <form method="post" action="{{ url_for('plane_blueprint.add_plane') }}">
+        <div class="input-box">
+          <label for="idPlane" >Plane ID:</label>
+          <input type="text" name="idPlane" placeholder="Enter Plane ID" required><br>
+        </div>
+
+        <div class="input-box">
+          <label for="capacity">New Capacity:</label>
+          <input type="number" name="capacity" placeholder="Enter New Capacity" required><br>
+        </div>
+
+        <div class="input-box">
+          <label for="crewID">New Crew ID:</label>
+          <input type="number" name="crewID" placeholder="Enter New Crew ID" required><br>
+        </div>
+
+        <div class="input-box">
+          <label for="planeType">New Plane Type:</label>
+          <select name="planeType" required>
+              <option value="Private">Private</option>
+              <option value="Commercial">Commercial</option>
+              <option value="Jumbo">Jumbo</option>
+              <option value="Cargo">Cargo</option>
+          </select><br>
+        </div>
+
+        <div class = "input-box">
+          <input type="submit" value="Update Plane">
+        </div>
+    </form>
+  </div>
+
+  <div class="add-form">
+    <div class="dep-title">Delete Add Plane</div>
+      <form method="post" action="{{ url_for('plane_blueprint.add_plane') }}">
+        <div class="input-box">
+          <label for="idPlane" >Plane ID:</label>
+          <input type="text" name="idPlane" placeholder="Enter New Plane ID" required><br>
+        </div>
+
+        <div class = "input-box">
+          <input type="submit" value="Delete Plane">
+        </div>
+    </form>
+  </div>
+
+</div>
 
   </body>
 </html>
