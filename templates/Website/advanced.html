@@ -1,0 +1,62 @@
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Advanced Functionality</title>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+    <body class="home">
+        <header class="header">
+            <a href="#" class="logo">Airline DBMS</a>
+            <nav class="navbar">
+                <a href="add_employee.html">Add Employee</a>
+                <a href="search_employee.html">Search Employee</a>
+                <a href="schedule_flight.html">Flight Scheduler</a>
+                <a href="create_department.html">Create Department</a>
+                <a href="add_plane.html">Add Plane</a>
+                <a href="advanced.html">Advanced</a>
+            </nav>
+        </header>
+
+        <div class="add-form">
+            <h1 class="search-title">Airport Query</h1>
+            <form action="{{ url_for('advanced_blueprint.advanced_flight') }}" method="post">
+                <div class="input-box">
+                    <div class="inRow">
+                        <input type="date" name="start_date" id="start_date" placeholder="Enter Start Date">
+                    </div>
+                    <div class="inRow">
+                        <input type="date" name="end_date" id="end_date" placeholder="Enter End Date">
+                    </div>
+                </div>
+                <div class="button">
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+
+            <h1>Viewing Window</h1>
+            <div id="viewing-window">
+                <h2>Flights</h2>
+                <ul>
+                    {% if flights %}
+                        {% for flight in flights %}
+                            <li class = "flight">
+                                Destination: {{ flight.destination }}<br>
+                                Departure Date: {{ flight.departureDate }}<br>
+                                Departure Time: {{ flight.departureTime }}<br>
+                                Flight Time: {{ flight.flightTime }} hours<br>
+                            </li>
+                        {% endfor %}
+                    {% else %}
+                        <p>No flights found for the specified period.</p>
+                    {% endif %}
+                </ul>
+            </div>
+        
+        </div>
+
+        
+
+    </body>
+</html>

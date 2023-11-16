@@ -3,6 +3,17 @@ from sqlalchemy.exc import IntegrityError
 
 flights_blueprint = Blueprint('flights_blueprint', __name__, template_folder='templates')
 
+from app import db
+
+class Flight(db.Model):
+    __tablename__ = 'Flight'
+    idFlight = db.Column(db.Integer, primary_key=True, unique=True)
+    destination = db.Column(db.String(45))
+    planeID = db.Column(db.String(45))
+    departureDate = db.Column(db.Date)
+    departureTime = db.Column(db.Time)
+    flightTime = db.Column(db.Integer)
+
 @flights_blueprint.route('/schedule_flight.html')
 def schedule_flight_form():
     return render_template('/Website/schedule_flight.html')
@@ -15,17 +26,6 @@ def schedule_flight():
     departureDate = request.form['departureDate']
     departureTime = request.form['departureTime']
     flightTime = request.form['FlightTime']
-    
-    from app import db
-    
-    class Flight(db.Model):
-        __tablename__ = 'Flight'
-        idFlight = db.Column(db.Integer, primary_key=True, unique=True)
-        destination = db.Column(db.String(45))
-        planeID = db.Column(db.String(45))
-        departureDate = db.Column(db.Date)
-        departureTime = db.Column(db.Time)
-        flightTime = db.Column(db.Integer)
 
     new_flight = Flight(idFlight=idFlight, destination=destination, planeID=planeID, departureDate=departureDate, departureTime=departureTime, flightTime=flightTime)
 
