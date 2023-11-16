@@ -22,9 +22,9 @@
 
 <div class="all-forms">
   <div class="add-form">
-    <div class="dep-title">Create Department</div>
+    <h1 class="search-title">Create Department</h1>
     <form method="post" action="{{ url_for('department_blueprint.add_department') }}">
-        <div class="user-details">
+        <div>
             <div class="input-box">
                 <span class="details">Department ID</span>
                 <input type="number" name = "idDepartment" placeholder="Enter Department ID" required>
@@ -105,8 +105,6 @@
   </div>
   
 </div>
-
-  </table>
 
   </body>
 </html>

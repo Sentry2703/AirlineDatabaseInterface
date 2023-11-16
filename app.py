@@ -16,10 +16,8 @@ import department_blueprint
 app.register_blueprint(department_blueprint.departments_blueprint, name='department_blueprint')
 import flight_blueprint
 app.register_blueprint(flight_blueprint.flights_blueprint, name='flight_blueprint')
-
-@app.route('/advanced.html')
-def advanced():
-    return render_template('Website/advanced.html')
+import advanced_blueprint
+app.register_blueprint(advanced_blueprint.advanced_blueprint, name='advanced_blueprint')
 
 
 @app.route('/search_employee.html')
