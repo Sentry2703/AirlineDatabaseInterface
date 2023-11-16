@@ -4,7 +4,6 @@ from flask_sqlalchemy import SQLAlchemy
 advanced_blueprint = Blueprint('advanced_blueprint', __name__, template_folder='templates')
 from flight_blueprint import Flight
 
-
 @advanced_blueprint.route('/advanced.html', methods=['GET'])
 def advanced_flight_form():
     return render_template('Website/advanced.html')

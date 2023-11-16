@@ -120,20 +120,6 @@ button {
   margin-left: 0%;
 }
 
-/* .add-form {
-  border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-  position: absolute;
-  width: 70%;
-  max-width: 600px;
-  max-height: 1000px;
-  left: 50%;
-  top: 55%;
-  padding: 50px 60px 70px;
-  margin-left: 0%;
-  background: linear-gradient(rgba(0, 0, 50, 0.8), rgba(0, 0, 50, 0.8));
-} */
-
 .input-box {
   padding-top: 10px;
 }
@@ -142,26 +128,6 @@ button {
   color:white;
   font-size: 25px;
   font-weight: 500;
-}
-
-.title::before {
-  content: "";
-  position: absolute;
-  top: 18%;
-  width: 40%;
-  left: 50;
-  height: 2px;
-  background: white;
-}
-
-.dep-title::before {
-  content: "";
-  position: absolute;
-  top: 21%;
-  width: 53%;
-  left: 50;
-  height: 2px;
-  background: white;
 }
 
 .input-box{

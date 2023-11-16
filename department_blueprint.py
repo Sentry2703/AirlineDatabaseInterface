@@ -26,7 +26,6 @@ def add_department():
 
     new_department = Department(idDepartment=idDepartment, positionName=positionName, classification=classification, primaryLocation=primaryLocation)
 
-    
     try:
         db.session.add(new_department)
         print(1)

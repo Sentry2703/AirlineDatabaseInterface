@@ -26,17 +26,6 @@ def add_employee():
     salary = request.form['Salary']
     status = request.form['Status']
 
-    from app import db
-    
-    class Employee(db.Model):
-        __tablename__ = 'Employee'
-        idEmployee = db.Column(db.Integer, primary_key=True, unique=True)
-        firstName = db.Column(db.String(45))
-        lastName = db.Column(db.String(45))
-        positionID = db.Column(db.Integer)
-        salary = db.Column(db.Integer)
-        status = db.Column(db.Enum('Active', 'Retired', 'Vacationing', 'Fired'))
-
     new_employee = Employee(idEmployee=idEmployee, firstName=firstName, lastName=lastName, positionID=positionID, salary=salary, status=status)
 
     db.session.add(new_employee)
