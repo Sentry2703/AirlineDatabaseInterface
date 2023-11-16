@@ -5,7 +5,7 @@ from Reader import *
 connection = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="Sentry2703"
+    password="sql242"
 )
 
 print(connection)

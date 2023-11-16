@@ -19,6 +19,8 @@
         </nav>
       </header>
 
+
+<div class="all-forms">
   <div class="add-form">
     <h1 class="search-title">Create Department</h1>
     <form method="post" action="{{ url_for('department_blueprint.add_department') }}">
@@ -53,6 +55,56 @@
         </div>
     </form>
   </div>
+  <div class="add-form">
+    <div class="dep-title">Update Department</div>
+    <form method="post" action="{{ url_for('department_blueprint.add_department') }}">
+        <div class="user-details">
+            <div class="input-box">
+                <span class="details">Department ID</span>
+                <input type="number" name = "idDepartment" placeholder="Enter Department ID" required>
+            </div>
+
+            <div class="input-box">
+                <span class="details">New Pos. Name</span>
+                <input type="text" placeholder="Enter Position Name" required name = "positionName">
+            </div>
+
+            <div class="input-box">
+              <label for="planeType">New Classification</label>
+              <select name="classification" required>
+                  <option value="Air Crew">Air Crew</option>
+                  <option value="Janitorial">Janitorial</option>
+                  <option value="Concessions">Concessions</option>
+                  <option value="Management">Management</option>
+              </select><br>
+            </div>
+
+            <div class="input-box">
+                <span class="details">New Primary Location</span>
+                <input type="text" name = "primaryLocation" placeholder="Enter Primary Location" required>
+            </div>
+        </div>
+        <div class="button">
+            <input type="Submit" value="Update">
+        </div>
+    </form>
+  </div>
+  <div class="add-form">
+    <div class="dep-title">Delete Department</div>
+    <form method="post" action="{{ url_for('department_blueprint.add_department') }}">
+        <div class="user-details">
+            <div class="input-box">
+                <span class="details">Department ID</span>
+                <input type="number" name = "idDepartment" placeholder="Enter Department ID" required>
+            </div>
+
+        <div class="button">
+            <input type="Submit" value="Delete">
+        </div>
+    </form>
+  </div>
+  
+</div>
 
   </body>
 </html>

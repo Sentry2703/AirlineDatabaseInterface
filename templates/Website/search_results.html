@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+</head>
+<body>
+    <h1>Search Results</h1>
+    
+    {% if search_result %}
+        <p>Employee found:</p>
+        <ul>
+            <li>ID: {{ search_result.idEmployee }}</li>
+            <li>First Name: {{ search_result.firstName }}</li>
+            <li>Last Name: {{ search_result.lastName }}</li>
+            <li>Position ID: {{ search_result.positionID }}</li>
+            <li>Salary: {{ search_result.salary }}</li>
+            <li>Status: {{ search_result.status }}</li>
+        </ul>
+    {% else %}
+        <p>{{ error_message }}</p>
+    {% endif %}
+
+
+</body>
+</html>

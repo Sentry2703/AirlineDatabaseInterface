@@ -3,6 +3,15 @@ from sqlalchemy.exc import IntegrityError
 
 planes_blueprint = Blueprint('planes_blueprint', __name__, template_folder='templates')
 
+from app import db
+
+class Plane(db.Model):
+    __tablename__ = 'Plane'
+    idPlane = db.Column(db.String(45), primary_key=True, unique=True)
+    capacity = db.Column(db.Integer)
+    crewID = db.Column(db.Integer) 
+    planeType = db.Column(db.Enum('Private', 'Commercial', 'Jumbo', 'Cargo'))
+
 @planes_blueprint.route('/')
 def index():
     return render_template('/Website/add_plane.html')
@@ -18,14 +27,6 @@ def add_plane():
     crewID = request.form['crewID']
     planeType = request.form['planeType']
 
-    from app import db
-
-    class Plane(db.Model):
-        __tablename__ = 'Plane'
-        idPlane = db.Column(db.String(45), primary_key=True, unique=True)
-        capacity = db.Column(db.Integer)
-        crewID = db.Column(db.Integer) 
-        planeType = db.Column(db.Enum('Private', 'Commercial', 'Jumbo', 'Cargo'))
 
     new_plane = Plane(idPlane=idPlane, capacity=capacity, crewID=crewID, planeType=planeType)
 
