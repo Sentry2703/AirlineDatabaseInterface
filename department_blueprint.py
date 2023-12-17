@@ -16,6 +16,16 @@ class Department(db.Model):
 def create_department():
     return render_template('/Website/create_department.html')
 
+@departments_blueprint.route('/search_employee.html', methods=['POST'])
+def search_department():
+    idDepartment = request.form['idDepartment']
+    try:
+        department = Department.query.filter(department.idDepartment == idDepartment).first()
+        return render_template('Website/success.html', title = "Department Found", department=department)
+    except Exception as e:
+        error_info = "An error occurred while processing your request."
+        return render_template('Website/error.html', error_info=e)
+
 @departments_blueprint.route('/create_department.html', methods=['POST'])
 def add_department():
     idDepartment = request.form['idDepartment']

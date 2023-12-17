@@ -32,6 +32,30 @@
                 <input type="submit" value="Submit">
           </div>
         </form>
+  
+        <h1 class="search-title">Department Directory</h1>
+      
+        <form class="search-form" action = "{{ url_for('department_blueprint.search_department') }}" method = "post">
+          <label for="search">Search for department:</label>
+          <input id="search" type="text" name="idDepartment" placeholder="Enter Department ID...">
+          <div class="button">
+            <input type="submit" value="Submit">
+          </div>
+        </form>
+
+
+        
+          <h1 class="search-title">Plane Directory</h1>
+        <form class="search-form" action = "" method = "post">
+          <label for="search">Search for plane:</label>
+          <input id="search" type="text" name="usersearch" placeholder="Enter Plane ID">
+          
+          <div class="button">
+            <input type="submit" value="Submit">
+          </div>
+        </form>
+        
+      </div>
 
         <div id="viewing-window">
           <h2>Employee</h2>
