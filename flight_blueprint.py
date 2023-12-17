@@ -66,7 +66,7 @@ def update_flight():
             flight.flightTime = request.form['newFlightTime']
 
         db.session.commit()
-        return render_template('/Website/schedule_flight.html')
+        return render_template('/Website/success.html', title = "Flight Updated", flight=flight)
     except Exception as e:
         error_info = "An error occurred while processing your request."
         return render_template('Website/error.html', error_info=e)

@@ -30,7 +30,7 @@ def add_department():
         print(1)
         db.session.commit()
         print(2)
-        return redirect(url_for('department_blueprint.create_department'))
+        return render_template('/Website/success.html', title = "Department Added", department=new_department)
     except IntegrityError as e:
         print(3)
         db.session.rollback()
@@ -62,7 +62,7 @@ def update_department():
             department.primaryLocation = request.form['newPrimaryLocation']
 
         db.session.commit()
-        return render_template('Website/create_department.html')
+        return render_template('Website/success.html', title = "Department Updated", department=department)
     except Exception as e:
         error_info = "An error occurred while processing your request."
         return render_template('Website/error.html', error_info=e)

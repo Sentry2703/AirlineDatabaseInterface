@@ -32,7 +32,7 @@ def add_employee():
     db.session.add(new_employee)
     try:
         db.session.commit()
-        return redirect(url_for('employee_blueprint.add_employee_form'))
+        return render_template('Website/success.html', title = "Employee Added", employee=new_employee)
     except IntegrityError as e:
         db.session.rollback()
         error_info = str(e.orig)
@@ -55,7 +55,7 @@ def search_employee():
 
     try:
         employee = Employee.query.filter(Employee.idEmployee==idEmployee).first()
-        return render_template('Website/search_employee.html', employee=employee)
+        return render_template('Website/success.html', title = "Employee Found", employee=employee)
     except Exception as e:
         error_info = "An error occurred while processing your request."
         return render_template('Website/error.html', error_info=e)
@@ -81,7 +81,7 @@ def update_employee():
         db.session.commit()
 
         employee = Employee.query.filter(Employee.idEmployee==idEmployee).first()
-        return render_template('Website/search_employee.html', employee=employee)
+        return render_template('Website/success.html', title= "Employee Updated", employee=employee)
     except Exception as e:
         error_info = "An error occurred while processing your request."
         return render_template('Website/error.html', error_info=e)
@@ -96,7 +96,7 @@ def delete_employee():
         employee = Employee.query.filter(Employee.idEmployee==idEmployee).first()
         employee.status = "Fired"
         db.session.commit()
-        return render_template('Website/search_employee.html', employee=employee)
+        return render_template('Website/success.html', title="Employee Fired", employee=employee)
     except Exception as e:
         error_info = "An error occurred while processing your request."
         return render_template('Website/error.html', error_info=e)

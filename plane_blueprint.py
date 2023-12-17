@@ -26,8 +26,6 @@ def add_plane():
     capacity = request.form['capacity']
     crewID = request.form['crewID']
     planeType = request.form['planeType']
-
-
     new_plane = Plane(idPlane=idPlane, capacity=capacity, crewID=crewID, planeType=planeType)
 
     db.session.add(new_plane)
@@ -35,7 +33,7 @@ def add_plane():
         print(1)
         db.session.commit()
         print(2)
-        return redirect(url_for('plane_blueprint.add_plane_form'))
+        return render_template('/Website/success.html', title = "Plane Added", plane=new_plane)
     except IntegrityError as e:
         print(3)
         db.session.rollback()
@@ -68,7 +66,7 @@ def update_plane():
 
         db.session.commit()
         plane = Plane.query.filter(Plane.planeID == planeID).first()
-        return render_template('/Website/add_plane.html')
+        return render_template('/Website/sucess.html', title = "Plane Updated", plane=plane)
     except Exception as e:
         error_info = "An error occurred while processing your request."
         return render_template('Website/error.html', error_info=e)

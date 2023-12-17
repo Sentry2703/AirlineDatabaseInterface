@@ -19,8 +19,52 @@
         </nav>
       </header>
       
-<div class="all-forms">
-    <div class="add-form">
-      <h1>Success</h1>
-    </div>
-</div>
+      <div class="all-forms">
+          <div class="add-form">
+            <h1>Success</h1>
+
+            <div id="viewing-window">
+              <h2>{{ title }}</h2>
+              <ul>
+                  {% if employee %}
+                    <li class = "flight">
+                        Employee ID: {{ employee.idEmployee }}<br>
+                        First Name: {{ employee.firstName }}<br>
+                        Last Name: {{ employee.lastName }}<br>
+                        Position: {{ employee.positionID }}<br>
+                        Salary: {{ employee.salary }}<br>
+                        Employment Status: {{ employee.status }}<br>
+                    </li>
+                  {% elif plane %}
+                    <li class = "flight">
+                        Plane ID: {{ plane.idPlane }}<br>
+                        Crew ID: {{ plane.crewID }}<br>
+                        Capacity: {{ plane.capacity }}<br>
+                        Plane Type: {{ plane.planeType }}<br>
+                    </li>
+                  {% elif department %}
+                    <li class = "flight">
+                        Department ID: {{ department.idDepartment }}<br>
+                        Department Name: {{ department.departmentName }}<br>
+                        Department Classification: {{ department.classification }}<br>
+                        Primary Location: {{ department.primaryLocation }}<br>
+                    </li>
+                  {% elif flight %}
+                      <li class = "flight">
+                        Flight ID: {{ flight.idFlight }}<br>
+                        Plane ID: {{ flight.planeID }}<br>
+                        Departure Date: {{ flight.departureDate }}<br>
+                        Departure Time: {{ flight.departureTime }}<br>
+                        Destination: {{ flight.destination }}<br>
+                        Flight Duration (in minutes): {{ flight.flightDuration }}<br>
+                      </li>
+                  {% else %}
+                      <p>Not Found</p>
+                  {% endif %}
+              </ul>
+          </div>
+          </div>
+      </div>
+
+    </body>
+</html>
